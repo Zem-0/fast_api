@@ -1,9 +1,9 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-import models, schemas, crud
-from database import SessionLocal, engine
+import app.models as models, app.schemas as schemas, app.crud as crud
+from app.database import SessionLocal, engine
 from fastapi.middleware.cors import CORSMiddleware
-from routers import meeting  # your router
+from app.routers import meeting  # your router
 
 models.Base.metadata.create_all(bind=engine)
 
