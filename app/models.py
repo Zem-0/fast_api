@@ -1,7 +1,6 @@
 from sqlalchemy import Column, Integer, String, Date, Time
-from database import Base
-from sqlalchemy.ext.declarative import declarative_base
-Base = declarative_base()
+from .database import Base
+
 class Meeting(Base):
     __tablename__ = "meetings"
 
